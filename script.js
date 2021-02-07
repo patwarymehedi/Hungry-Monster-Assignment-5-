@@ -1,27 +1,20 @@
 const mealsDiv = document.getElementById('foods');
 const mealDiv = document.getElementById('mealDetails');
+
+
         document.getElementById('search').addEventListener('click', function () {
             const meals = document.getElementById('food').value;
             getFood(meals);
             document.getElementById('food').value = '';
-            // document.getElementById('mealDetails').style.display = 'none'
-            
-            
         })
+
+
         function getFood(meals) {
-            let url = "";
-            if (meals.length === 1) {
-                url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`;
+
+                const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`;
                 mealDiv.innerHTML = null;
                 mealsDiv.innerHTML = null;
 
-            }
-            else {
-                url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`;
-                mealDiv.innerHTML = null;
-                mealsDiv.innerHTML = null;
-        
-            }
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
@@ -32,6 +25,8 @@ const mealDiv = document.getElementById('mealDetails');
                     document.getElementById('food').value = '';
                 })
         }
+
+
         const displayMeals = data => {
 
             data.meals.forEach(meal => {
@@ -49,6 +44,7 @@ const mealDiv = document.getElementById('mealDetails');
             
         };
 
+        
         const displayMealDetail = name => {
 
             const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
