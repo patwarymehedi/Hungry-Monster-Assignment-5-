@@ -1,0 +1,52 @@
+body {
+    background: cornsilk;
+    height: 100vh;
+}
+
+#foods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.meal {
+    border: 1px solid crimson;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    background: rgb(182, 201, 238);
+    margin-left: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.displayDetails {
+    border: 1px solid cornflowerblue;
+    border-radius: 20px;
+    text-align: center;
+    width: 800px;
+    height: 50%;
+    background: darksalmon;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.meals {
+    font-size: 45px;
+    margin: 10px;
+    background-color: cyan;
+}
+
+.ulStyle {
+    font-size: 30px;
+    color: dimgrey;
+}
+
+#foods img {
+    width: 200px;
+}
+
+#mealDetails img {
+    width: 200px;
+}
