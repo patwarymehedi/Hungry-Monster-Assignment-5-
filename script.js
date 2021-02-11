@@ -4,7 +4,13 @@ const mealDiv = document.getElementById('mealDetails');
 
         document.getElementById('search').addEventListener('click', function () {
             const meals = document.getElementById('food').value;
-            getFood(meals);
+            if(meals === ''){
+                alert('food name is not valid');
+            }
+            else{
+                getFood(meals);
+            }
+            
             document.getElementById('food').value = '';
         })
 
@@ -53,7 +59,6 @@ const mealDiv = document.getElementById('mealDetails');
                 .then(data => renderMealInfo(data))
         }
         const renderMealInfo = meal => {
-            const mealDiv = document.getElementById('mealDetails');
             mealDiv.innerHTML = `
             <div class = "displayDetails">
             <img src ="${meal.meals[0].strMealThumb}">
